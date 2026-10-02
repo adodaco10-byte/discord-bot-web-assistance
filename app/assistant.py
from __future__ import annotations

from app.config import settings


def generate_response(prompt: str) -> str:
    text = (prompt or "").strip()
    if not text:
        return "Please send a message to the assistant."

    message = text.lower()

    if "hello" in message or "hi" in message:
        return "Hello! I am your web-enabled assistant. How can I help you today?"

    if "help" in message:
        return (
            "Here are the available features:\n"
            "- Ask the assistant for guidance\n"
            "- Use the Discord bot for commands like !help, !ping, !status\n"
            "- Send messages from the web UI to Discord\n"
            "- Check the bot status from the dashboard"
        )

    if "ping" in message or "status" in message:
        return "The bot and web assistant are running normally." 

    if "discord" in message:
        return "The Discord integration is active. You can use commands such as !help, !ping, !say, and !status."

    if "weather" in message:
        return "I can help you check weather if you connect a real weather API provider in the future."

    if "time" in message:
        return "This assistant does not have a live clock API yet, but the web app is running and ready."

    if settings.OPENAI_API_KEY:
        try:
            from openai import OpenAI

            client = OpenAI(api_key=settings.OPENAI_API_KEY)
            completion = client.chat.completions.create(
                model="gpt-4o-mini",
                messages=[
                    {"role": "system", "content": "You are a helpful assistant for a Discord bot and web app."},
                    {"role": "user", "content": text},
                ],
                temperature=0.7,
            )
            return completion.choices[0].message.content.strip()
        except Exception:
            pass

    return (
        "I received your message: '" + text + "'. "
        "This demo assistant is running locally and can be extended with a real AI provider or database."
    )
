@@ -1,0 +1,21 @@
+from dataclasses import dataclass
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
+
+
+@dataclass
+class Settings:
+    DISCORD_TOKEN: str = os.getenv("DISCORD_TOKEN", "")
+    BOT_NAME: str = os.getenv("BOT_NAME", "AssistBot")
+    COMMAND_PREFIX: str = os.getenv("COMMAND_PREFIX", "!")
+    WEB_HOST: str = os.getenv("WEB_HOST", "0.0.0.0")
+    WEB_PORT: int = int(os.getenv("WEB_PORT", "5000"))
+    SECRET_KEY: str = os.getenv("SECRET_KEY", "change_this_secret_key")
+    WEB_ASSISTANT_ENABLED: bool = os.getenv("WEB_ASSISTANT_ENABLED", "true").lower() == "true"
+    DISCORD_CHANNEL_ID: str = os.getenv("DISCORD_CHANNEL_ID", "")
+    OPENAI_API_KEY: str = os.getenv("OPENAI_API_KEY", "")
+
+
+settings = Settings()

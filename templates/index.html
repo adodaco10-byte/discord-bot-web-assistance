@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Discord Bot + Web Assistant</title>
+    <link rel="stylesheet" href="/static/styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>AssistBot Dashboard</h1>
+        <p>Discord bot and web assistant control panel</p>
+      </header>
+
+      <section class="status-panel">
+        <div class="status-box">
+          <span class="label">Bot status</span>
+          <strong id="bot-status">Checking...</strong>
+        </div>
+        <div class="status-box">
+          <span class="label">Web status</span>
+          <strong id="web-status">Online</strong>
+        </div>
+      </section>
+
+      <section class="chat-box">
+        <h2>Assistant</h2>
+        <div id="chat-log" class="chat-log">
+          <div class="message bot">Hello! I am your web assistant. Ask me anything.</div>
+        </div>
+        <form id="assistant-form">
+          <input id="assistant-input" type="text" placeholder="Type a message..." autocomplete="off" />
+          <button type="submit">Send</button>
+        </form>
+      </section>
+
+      <section class="discord-box">
+        <h2>Send to Discord</h2>
+        <form id="discord-form">
+          <input id="discord-message" type="text" placeholder="Message to send on Discord" autocomplete="off" />
+          <button type="submit">Send to Discord</button>
+        </form>
+      </section>
+    </div>
+
+    <script src="/static/script.js"></script>
+  </body>
+</html>
